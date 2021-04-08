@@ -1,6 +1,21 @@
 {% extends "projects/base.html" %}
 
 {% block content %}
+{% for p in projects %}
+    
 
-Home
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+          <h1 class="display-4 fw-normal">{{ p.title }}</h1>
+          <p class="lead fw-normal">{{ p.short_description }}</p>
+          <a class="btn btn-outline-secondary" href="{% url 'details' p.id %}">More info</a>
+          <a class="btn btn-outline-secondary" href="{{ p.url }}" target="_blank">Visit the Website</a>
+        </div>
+        <div class="product-device shadow-sm d-none d-md-block">
+    <img src="{{p.image.url}}" alt="Image for project: {{p.title}}" height="200">
+
+        </div>
+        <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+      </div> 
+{% endfor %}
 {% endblock %}
