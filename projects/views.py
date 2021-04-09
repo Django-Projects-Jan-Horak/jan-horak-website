@@ -22,11 +22,27 @@ def game_development(request):
 
 def gameprojects(request, name):
     projects = Project.objects.filter(owner=name)
-    return render(request, "projects/game/gameprojects.html", {"projects":projects})
+    return render(request, "projects/game/gameprojects.html", {"projects":projects, "name":name})
 
 def webprojects(request, name):
     #project = get_object_or_404(Project, owner=name)
     projects = Project.objects.filter(owner=name)
-    return render(request, "projects/web/webprojects.html", {"projects":projects})
+    return render(request, "projects/web/webprojects.html", {"projects":projects, "name":name})
+
+def detail_game(request, id):
+    project = get_object_or_404(Project, id=id)
+    photos = ProjectImage.objects.filter(project=project)
+    return render(request, 'projects/game/detail_game.html', {
+        'project':project,
+        'photos':photos
+    })
+
+def detail_web(request, id):
+    project = get_object_or_404(Project, id=id)
+    photos = ProjectImage.objects.filter(project=project)
+    return render(request, 'projects/web/detail_web.html', {
+        'project':project,
+        'photos':photos
+    })
 
 

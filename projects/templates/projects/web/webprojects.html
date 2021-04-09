@@ -5,23 +5,24 @@
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
       <li class="breadcrumb-item"><a href="{% url 'web_development' %}">Web Development</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Web Projects</li>
+      <li class="breadcrumb-item active" aria-current="page">{{name|capfirst}} Projects</li>
     </ol>
   </nav>
   <div class="bg-primary text-light py-5 text-center rounded mb-5">
-    <h1 >Web Projects</h1>
+    <h1 >{{name|capfirst}} Projects</h1>
   </div>
 
 <div class="card-group">
 {% for p in projects %}
 <div class="card">
-      <img src="{{p.image.url}}" class="card-img-top">
+    <a href="{% url 'detail_web' p.id %}"><img src="{{p.image.url}}" class="card-img-top"></a>
+
       <div class="card-body">
         <h3 class="card-title">{{p.title}}</h3>
         <p class="card-text">{{p.description}}</p>
         <p>Used technologies: {{p.used_tech}}</p>
         <div class="d-grid">
-            <a href="#" class="btn btn-outline-primary py-5">Show More About {{p.title}}</a>
+            <a href="{% url 'detail_web' p.id %}" class="btn btn-outline-primary py-5">Show More About {{p.title}}</a>
         </div>
       </div>
     </div>

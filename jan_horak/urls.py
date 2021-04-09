@@ -27,10 +27,11 @@ urlpatterns = [
     # Web
     path('web', views.web_development, name="web_development"),
     path('web/<str:name>', views.webprojects, name="webprojects"),
+    path('web/project/<int:id>/', views.detail_web, name='detail_web'),
 
     # Games
     path('games', views.game_development, name="game_development"),
     path('games/<str:name>', views.gameprojects, name="gameprojects"),
+    path('games/project/<int:id>/', views.detail_game, name='detail_game'),
     
-    path('web/project/<int:id>/', views.detail_view, name='details'),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

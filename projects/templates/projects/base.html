@@ -23,8 +23,18 @@
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Indie+Flower&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap');
 
-       
+        body{
+          /*font-family: 'Indie Flower', cursive;
+          font-size: 1.5em;*/
+          font-family: 'Indie Flower', cursive;
+          font-family: 'Amatic SC', cursive;
+          font-family: 'Short Stack', cursive;
+        }
+        
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -113,10 +123,13 @@
     
     .bg-purple { background-color: #6f42c1; }
 
+      .py-7 {
+        padding: 5em 0;
+      }
 
+        
     </style>
 
-    
   </head>
   <body>
     
@@ -134,16 +147,16 @@
             <a class="nav-link active" aria-current="page" href="#"></a>
           </li>
           <li class="nav-item mx-5">
-            <a class="nav-link" href="{% url 'web_development' %}"><span class="material-icons fs-1">code</span></a>
+            <a class="nav-link" href="{% url 'web_development' %}"><span class="material-icons fs-1 text-primary">code</span></a>
           </li>
           <li class="nav-item mx-5">
-            <a class="nav-link" href="{% url 'game_development' %}"><span class="material-icons fs-1">games</span></a>
+            <a class="nav-link" href="{% url 'game_development' %}"><span class="material-icons fs-1 text-warning">games</span></a>
           </li>
           <li class="nav-item mx-5">
-            <a class="nav-link" href="#"><span class="material-icons fs-1">emoji_people</span></a>
+            <a class="nav-link" href="#"><span class="material-icons fs-1 text-danger">emoji_people</span></a>
           </li>
           <li class="nav-item mx-5">
-            <a class="nav-link" href="#"><span class="material-icons fs-1">military_tech</span></a>
+            <a class="nav-link" href="#"><span class="material-icons fs-1 text-success">military_tech</span></a>
           </li>
           
 
