@@ -20,7 +20,15 @@ from django.conf.urls.static import static
 from . import settings
 
 urlpatterns = [
+    # Basic
     path('admin/', admin.site.urls),
     path('', views.home, name="home"),
-    path('/project/<int:id>/', views.detail_view, name='details'),
+
+    # Web
+    path('/web', views.web_development, name="web_development"),
+
+    # Games
+    path('/games', views.game_development, name="game_development"),
+    
+    path('/web/project/<int:id>/', views.detail_view, name='details'),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
