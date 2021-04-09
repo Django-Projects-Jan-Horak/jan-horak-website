@@ -1,7 +1,7 @@
 
 from django.contrib import admin
  
-from .models import Project, ProjectImage
+from .models import Project, ProjectImage, Tool
  
 class ProjectImageAdmin(admin.StackedInline):
     model = ProjectImage
@@ -16,3 +16,6 @@ class ProjectAdmin(admin.ModelAdmin):
 @admin.register(ProjectImage)
 class ProjectImageAdmin(admin.ModelAdmin):
     pass
+
+admin.site.register(Tool)
+

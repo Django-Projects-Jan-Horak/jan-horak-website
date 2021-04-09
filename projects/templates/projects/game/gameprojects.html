@@ -1,0 +1,33 @@
+{% extends 'projects/base.html' %}
+ 
+{% block content %}
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'game_development' %}">Game Development</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Game Projects</li>
+    </ol>
+  </nav>
+  <div class="bg-warning text-dark py-5 text-center rounded mb-5">
+    <h1 >Game Projects</h1>
+  </div>
+
+<div class="card-group">
+{% for p in projects %}
+<div class="card">
+      <img src="{{p.image.url}}" class="card-img-top">
+      <div class="card-body">
+        <h3 class="card-title">{{p.title}}</h3>
+        <p class="card-text">{{p.description}}</p>
+        <p>Used technologies: {{p.used_tech}}</p>
+        <div class="d-grid">
+            <a href="#" class="btn btn-outline-warning">Show More About {{p.title}}</a>
+        </div>
+      </div>
+    </div>
+
+{% endfor %}
+</div>
+
+{%endblock%}
+
