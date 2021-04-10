@@ -1,0 +1,128 @@
+main {
+        min-height: 75vh;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap');
+
+body{
+  /*font-family: 'Indie Flower', cursive;
+  font-size: 1.5em;*/
+  font-family: 'Indie Flower', cursive;
+  font-family: 'Amatic SC', cursive;
+  font-family: 'Short Stack', cursive;
+}
+
+.bd-placeholder-img {
+font-size: 1.125rem;
+text-anchor: middle;
+-webkit-user-select: none;
+-moz-user-select: none;
+user-select: none;
+}
+
+@media (min-width: 768px) {
+.bd-placeholder-img-lg {
+  font-size: 3.5rem;
+}
+}
+
+html{
+font-family: 'Indie Flower', cursive;
+}
+
+html,
+body {
+overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+
+body {
+padding-top: 56px;
+}
+
+@media (max-width: 991.98px) {
+.offcanvas-collapse {
+position: fixed;
+top: 56px; /* Height of navbar */
+bottom: 0;
+left: 100%;
+width: 100%;
+padding-right: 1rem;
+padding-left: 1rem;
+overflow-y: auto;
+visibility: hidden;
+background-color: #343a40;
+transition: transform .3s ease-in-out, visibility .3s ease-in-out;
+}
+.offcanvas-collapse.open {
+visibility: visible;
+transform: translateX(-100%);
+}
+}
+
+.nav-scroller {
+position: relative;
+z-index: 2;
+height: 2.75rem;
+overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+display: flex;
+flex-wrap: nowrap;
+padding-bottom: 1rem;
+margin-top: -1px;
+overflow-x: auto;
+color: rgba(255, 255, 255, .75);
+text-align: center;
+white-space: nowrap;
+-webkit-overflow-scrolling: touch;
+}
+
+
+
+.nav-underline .active {
+font-weight: 500;
+color: #343a40;
+}
+
+.text-white-50 { color: rgba(255, 255, 255, .5); }
+
+.bg-purple { background-color: #6f42c1; }
+
+.py-7 {
+padding: 5em 0;
+}
+
+.nav-underline .nav-link {
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+        font-size: .875rem;
+        color: #6c757d;
+        
+        }
+        
+        .nav-underline  {
+        color: #007bff;
+        }
+        .nav-link:hover {
+          color: #007bff;
+        }
+
+        .hover-scale {
+        transition: 0.5s ease-in-out;
+
+        }
+
+        hover-scale-2 {
+          transition: ease-in-out;
+
+          }
+        .hover-scale:hover{
+        transform: scale(1.2);
+        }
+        .hover-scale-2:hover{
+          transform: scale(1.5);
+          }

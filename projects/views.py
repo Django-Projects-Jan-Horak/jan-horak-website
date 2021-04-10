@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Project, ProjectImage, Tool
+from .models import Project, ProjectImage, Tool, Certificate
 
 def home(request):
     return render(request, "projects/home.html")
@@ -44,5 +44,11 @@ def detail_web(request, id):
         'project':project,
         'photos':photos
     })
-
+def about_me(request):
+    return render(request, 'projects/about_me.html')
+    
+def certificates(request):
+    webs = Certificate.objects.filter(category="W")
+    games = Certificate.objects.filter(category="G")
+    return render(request, 'projects/certificates.html', {"webs":webs, "games":games})
 

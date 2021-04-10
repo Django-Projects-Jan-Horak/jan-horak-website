@@ -14,14 +14,18 @@
     <div class="row row-cols-1 row-cols-md-2 g-4">
 
       {% for tool in tools %}
-      <div class="col"">
-        <div class="card">
-          <a href="{% url 'webprojects' tool.name %}"><img src="{{ tool.image.url }}" class="card-img-top img-fluid" style="height:300px; width:300px" alt="logo of {{tool.title}}"></a>
+      <div class="col hover-scale">
+        <div class="card border border-primary">
+          <a href="{% url 'webprojects' tool.name %}"><img src="{{ tool.image.url }}" class="card-img-top img-fluid" style="height:300px;" alt="logo of {{tool.title}}"></a>
           <div class="card-body">
             <h2 class="card-title">{{ tool.title }}</h2>
             <p class="card-text">{{tool.desc}}</p>
-            <div class="d-grid">
-              <a href="{% url 'webprojects' tool.name %}" class="btn btn-outline-primary">Explore More about {{tool.title}}</a>
+            {% if tool.docs_url %}
+            <p class="card-text">More about {{tool.title}} you can find <a href="{{tool.docs_url}}" class="btn btn-outline-primary btn-sm" target="_blank">Here</a></p>
+              
+            {% endif %}
+            <div class="d-grid hover-scale">
+              <a href="{% url 'webprojects' tool.name %}" class="btn btn-outline-primary py-4 fs-2">Show the {{tool.title}} Projects</a>
           </div>
           </div>
         </div>

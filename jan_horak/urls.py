@@ -33,5 +33,11 @@ urlpatterns = [
     path('games', views.game_development, name="game_development"),
     path('games/<str:name>', views.gameprojects, name="gameprojects"),
     path('games/project/<int:id>/', views.detail_game, name='detail_game'),
+
+    # About Me
+    path('aboutme', views.about_me, name='about_me'),
+
+    # Certificates
+    path('certificates', views.certificates, name='certificates'),
     
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

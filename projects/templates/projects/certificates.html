@@ -1,0 +1,93 @@
+{% extends 'projects/base.html' %} {% block content %}
+<nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">
+      Qualification & Certificates
+    </li>
+  </ol>
+</nav>
+
+<div class="bg-success text-light py-5 text-center rounded mb-5">
+  <h1>Web Development Qualification</h1>
+</div>
+<div class="card-group my-5">
+  {% for c in webs %}
+  <div class="card">
+    <img
+      src="{{c.certificate_image.url}}"
+      class="card-img-top"
+      alt="Certificate of {{c.title}}"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{c.title}}</h5>
+      <hr />
+      <p class="card-text">{{c.comment}}</p>
+      <p>
+        Cerificate
+        <a href="{{c.certificate_pdf.url}}" target="_blank"
+          ><span class="material-icons fs-1 text-success"
+            >picture_as_pdf</span
+          ></a
+        >
+      </p>
+      <hr />
+      <p>Related Projects: {{c.projects}}</p>
+      <hr />
+      <p>
+        Check the course
+        <a
+          target="_blank"
+          href="{{c.url_to_course}}"
+          class="btn btn-outline-success btn-sm"
+        >
+          Here</a
+        >
+      </p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="bg-success text-light py-5 text-center rounded mb-5">
+  <h1>Game Development Qualification</h1>
+</div>
+
+<div class="card-group my-5">
+  {% for c in games %}
+  <div class="card">
+    <img
+      src="{{c.certificate_image.url}}"
+      class="card-img-top"
+      alt="Certificate of {{c.title}}"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{c.title}}</h5>
+      <hr />
+      <p class="card-text">{{c.comment}}</p>
+      <p>
+        Cerificate
+        <a href="{{c.certificate_pdf.url}}" target="_blank"
+          ><span class="material-icons fs-1 text-success"
+            >picture_as_pdf</span
+          ></a
+        >
+      </p>
+      <hr />
+      <p>Related Projects: {{c.projects}}</p>
+      <hr />
+      <p>
+        Check the course
+        <a
+          target="_blank"
+          href="{{c.url_to_course}}"
+          class="btn btn-outline-success btn-sm"
+        >
+          Here</a
+        >
+      </p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock%}
