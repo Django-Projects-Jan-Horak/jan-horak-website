@@ -15,12 +15,13 @@
 <div class="card-group">
 {% for p in projects %}
 <div class="card hover-scale">
-    <a href="{% url 'detail_web' p.id %}"><img src="{{p.image.url}}" class="card-img-top img-fluid"></a>
+    <a href="{% url 'detail_web' p.id %}" class="text-decoration-none text-dark"><img src="{{p.image.url}}" class="card-img-top img-fluid my-4 px-2">
 
       <div class="card-body">
         <h3 class="card-title">{{p.title}}</h3>
-        <p class="card-text">{{p.description}}</p>
+        <p class="card-text">{{p.short_description}}</p>
         <p>Used technologies: {{p.used_tech}}</p>
+      </a>
         <div class="d-grid hover-scale">
             <a href="{% url 'detail_web' p.id %}" class="btn btn-outline-primary py-5">Show More About {{p.title}}</a>
         </div>

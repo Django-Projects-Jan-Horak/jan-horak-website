@@ -20,8 +20,10 @@ class Project(models.Model):
     owner = models.CharField(max_length=10, choices=CATEGORY, default="django")
 
     def short_description(self):
-        if len(self.description) > 110:
-            return self.description[100] + "..."
+        if len(self.description) > 140:
+            return self.description[:140] + "..."
+        else:
+            return self.description
 
     def __str__(self):
         return self.title

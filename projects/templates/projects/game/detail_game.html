@@ -6,7 +6,7 @@
     <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
     <li class="breadcrumb-item"><a href="{% url 'game_development' %}">Game Development</a></li>
     <li class="breadcrumb-item">
-      <a href="{% url 'webprojects' project.owner %}"
+      <a href="{% url 'gameprojects' project.owner %}"
         >{{project.owner|capfirst}} Projects</a
       >
     </li>
@@ -24,7 +24,7 @@
 <div class="d-grid">
   {% if project.url %}
   <a href="{{project.url}}" class="btn btn-outline-warning my-2" target="_blank"
-    >Visit the website</a
+    >Download {{project.title}}</a
   >
   {% endif %} {% if project.git_url %}
   <a

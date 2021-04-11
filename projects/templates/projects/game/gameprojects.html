@@ -14,14 +14,15 @@
 
 <div class="card-group">
 {% for p in projects %}
-<div class="card">
-    <a href="{% url 'detail_game' p.id %}"><img src="{{p.image.url}}" class="card-img-top"></a>
+<div class="card hover-scale">
+    <a href="{% url 'detail_game' p.id %}" class="text-decoration-none text-dark"><img src="{{p.image.url}}" class="card-img-top">
       <div class="card-body">
         <h3 class="card-title">{{p.title}}</h3>
-        <p class="card-text">{{p.description}}</p>
+        <p class="card-text">{{p.short_description}}</p>
         <p>Used technologies: {{p.used_tech}}</p>
+      </a>
         <div class="d-grid">
-            <a href="{% url 'detail_game' p.id %}" class="btn btn-outline-warning py-4">Show More About {{p.title}}</a>
+            <a href="{% url 'detail_game' p.id %}" class="btn btn-outline-warning py-4 hover-scale">Show More About {{p.title}}</a>
         </div>
       </div>
     </div>
