@@ -1,5 +1,21 @@
 {% extends 'projects/base.html' %}
- 
+{% load static %}
 {% block content %}
-<h1>About me</h1>
+<div class="bg-danger text-light py-5 text-center rounded mb-5">
+    <h1>Hello, Jan Horak here!</h1>
+  </div>
+
+  <div class="bg-danger text-light py-5 text-center rounded mb-5">
+    <p class="col-md-12 fs-4 mt-4 px-3">Hello, I'm student of a gymnazium. But my primary education is situated in Udemy/Youtube courses. You can check some certificates in green section of this website.
+    </p>
+    <p class="col-md-12 fs-4 mt-4 px-3">I'm 18 years old & live in countyside in small village. My interests are football, game development, web development, learning, self improvement. </p>
+    <p class="col-md-12 fs-4 mt-4 px-3">& That's me :-)</p>
+    <div class="px-5">
+    <img src="{% static 'images/1.jpg' %}" class="img-fluid rounded" alt="Image of myself">
+
+    </div>
+
+</div>
+
+
 {% endblock%}

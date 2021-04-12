@@ -1,0 +1,40 @@
+
+{% extends 'projects/base.html' %} {% block content %}
+<nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">
+      Send email
+    </li>
+  </ol>
+</nav>
+
+<div class="bg-info text-dark py-5 text-center rounded mb-5">
+  <h1>Send email</h1>
+</div>
+
+{% if message %}
+<div class="alert alert-info" role="alert">
+    {{message}}
+  </div> 
+{% endif %}
+
+    <form method="POST" action="{% url 'send_email' %}">
+    {% csrf_token %}
+    <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input name="from_mail" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+          <label for="subject" class="form-label">Subject</label>
+          <input name="subject" type="text" class="form-control" id="subject" aria-describedby="subject">
+
+          <label for="message" class="form-label">Message</label>
+          <textarea name="message" type="text" class="form-control" id="message" aria-describedby="message"></textarea>
+        </div>
+
+        </div>
+        <button type="submit" class="btn btn-info">Send</button>
+      </form>
+
+
+{% endblock %}

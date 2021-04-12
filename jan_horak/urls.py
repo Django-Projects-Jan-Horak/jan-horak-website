@@ -39,5 +39,9 @@ urlpatterns = [
 
     # Certificates
     path('certificates', views.certificates, name='certificates'),
+
+    # email
+    path('email/', views.email, name='email'),
+    path('send_email/', views.send_email, name='send_email'),
     
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

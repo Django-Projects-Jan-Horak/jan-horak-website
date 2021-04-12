@@ -1,5 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Project, ProjectImage, Tool, Certificate
+from django.core.mail import send_mail
+
 
 def home(request):
     return render(request, "projects/home.html")
@@ -51,4 +53,23 @@ def certificates(request):
     webs = Certificate.objects.filter(category="W")
     games = Certificate.objects.filter(category="G")
     return render(request, 'projects/certificates.html', {"webs":webs, "games":games})
+
+def email(request):
+    return render(request, "projects/email.html", {"message":""})
+
+def send_email(request):
+    if request.method == "POST":
+        send_mail(
+            request.POST["subject"],
+            request.POST["message"],
+            request.POST["from_mail"],
+            ['janhorak58@gmail.com'],
+        )
+    
+        return redirect("send_email")
+
+    else:
+        return render(request, "projects/email.html", {"message":"Email Successfully sent"})
+
+
 

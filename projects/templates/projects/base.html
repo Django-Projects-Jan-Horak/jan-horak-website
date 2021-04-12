@@ -19,6 +19,8 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+
     
 
     <meta name="theme-color" content="#7952b3">
@@ -93,21 +95,21 @@
 
           <li class="nav-item mx-5 hover-scale">
             <a class="nav-link" href="{% url 'web_development' %}"><span class="material-icons fs-1 text-primary">code</span></a>
-          </li>
+          
           <li class="nav-item mx-5 hover-scale">
             <a class="nav-link" href="{% url 'game_development' %}"><span class="material-icons fs-1 text-warning">
               sports_esports
               </span></a>
-          </li>
+          
           <li class="nav-item mx-5 hover-scale">
             <a class="nav-link" href="{% url 'about_me' %}"><span class="material-icons fs-1 text-danger">emoji_people</span></a>
-          </li>
+          
           <li class="nav-item mx-5 hover-scale">
             <a class="nav-link" href="{% url 'certificates' %}"><span class="material-icons fs-1 text-success">verified</span></a>
-          </li>
+          
           <li class="nav-item mx-5 hover-scale">
-            <a class="nav-link" href="mailto: janhorak58@gmail.com"><span class="material-icons fs-1 text-info">mail</span></a>
-          </li>
+            <a class="nav-link" href="{% url 'email'  %}"><span class="material-icons fs-1 text-info">mail</span></a>
+          
           
 
        
@@ -124,16 +126,50 @@
   
 </main>
 
-<footer class="py-5 bg-dark text-light rounded mt-5">
+<footer class="">
  
   <div class="container">
-    <p class="float-end mb-1 hover-scale">
-      <a href="#" class="text-decoration-none text-light"><span class="material-icons fs-1">keyboard_arrow_up</span></a>
-    </p>
-    <p class="mb-1">&copy; Jan Horák {% now "Y" %} </p>
+
   </div>
 </footer>
+<footer class="py-5 bg-dark text-light rounded mt-5">
+  <div class="container">
+  <div class="row">
+    <div class="col-12 col-md">
+      <p class="mb-1">&copy; Jan Horák </p>
+      <p>2020 - {% now "Y" %}</p>
 
+    </div>
+    <div class="col-6 col-md">
+        <a class="link-light" href="{% url 'home' %}">Home</a>
+    </div>
+    <div class="col-6 col-md">
+      <a class="link-primary" href="{% url 'web_development' %}">Web Development</a>
+    </div>
+    <div class="col-6 col-md">
+      <a class="link-warning" href="{% url 'game_development' %}">Game development</a>
+    </div>
+    <div class="col-6 col-md">
+      <a class="link-danger" href="{% url 'about_me' %}">About me</a>
+    </div>
+    <div class="col-6 col-md">
+      <a class="link-success" href="{% url 'certificates' %}">Qualification & Certificates</a>
+    </div>
+    <div class="col-6 col-md">
+      <a class="link-info" href="email">Email me</a>
+    </div>
+    
+    </div>
+  
+    <div class="col-6 col-md">
+      <p class="float-end mb-1 hover-scale">
+        <a href="#" class="text-decoration-none text-light"><span class="material-icons fs-1">keyboard_arrow_up</span></a>
+      </p>
+    </div>
+  </div>
+</div>
+  
+</footer>
 <script
 src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

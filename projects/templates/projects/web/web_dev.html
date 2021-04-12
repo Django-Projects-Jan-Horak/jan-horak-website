@@ -16,10 +16,11 @@
       {% for tool in tools %}
       <div class="col hover-scale">
         <div class="card border border-primary">
-          <a href="{% url 'webprojects' tool.name %}"><img src="{{ tool.image.url }}" class="card-img-top img-fluid" style="height:300px;" alt="logo of {{tool.title}}"></a>
+          <a href="{% url 'webprojects' tool.name %}" class="text-decoration-none text-dark"><img src="{{ tool.image.url }}" class="card-img-top img-fluid" style="height:300px;" alt="logo of {{tool.title}}">
           <div class="card-body">
             <h2 class="card-title">{{ tool.title }}</h2>
-            <p class="card-text">{{tool.desc}}</p>
+            <p class="card-text my-4">{{tool.desc}}</p>
+          </a>
             {% if tool.docs_url %}
             <p class="card-text">More about {{tool.title}} you can find <a href="{{tool.docs_url}}" class="btn btn-outline-primary btn-sm" target="_blank">Here</a></p>
               
